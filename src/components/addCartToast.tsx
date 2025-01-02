@@ -8,7 +8,17 @@ import { Button } from "./ui/button";
 import { addtoCart } from "@/app/store/features/cart";
 import { ShoppingCart } from "lucide-react";
 
-function CartToast({ cartItem }: {cartItem : React.ReactNode }) {
+interface CartItem {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  quantity: number;
+  totalPrice: number;
+}
+
+
+function CartToast({ cartItem }: {cartItem : CartItem }) {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {

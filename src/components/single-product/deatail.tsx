@@ -13,6 +13,16 @@ interface Params {
   params: Promise<{ id: string }>;
 }
 
+interface CartItem {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  quantity: number;
+  totalPrice: number;
+}
+
+
 export default function ProductDetail({ params }: Params) {
   const [id, setId] = useState<string | null>(null);
   const dispatch = useDispatch<AppDispatch>();
@@ -20,7 +30,7 @@ export default function ProductDetail({ params }: Params) {
     id ? selectProductById(state, parseInt(id)) : null
   );
 
-  const [cartItem, setCartItem] = useState({
+  const [cartItem, setCartItem] = useState<CartItem>({
     id: 0,
     name: "",
     image: "",
