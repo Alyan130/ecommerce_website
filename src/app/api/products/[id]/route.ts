@@ -84,7 +84,6 @@ const carddata = [
             price: 699,
         }
     ]
-    
 ]
 
 export const  GET = async (req: NextRequest, { params}:{params:Promise<{id:string}>}) => {

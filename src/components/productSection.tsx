@@ -18,7 +18,7 @@ const [data, setData]=useState<pdata[]>([]);
   useEffect(()=>{
     const fetchdata = async () =>{
       try{
-const res = await fetch("/api/products");
+const res = await fetch("http://localhost:3000/api/products");
 const products:pdata[]=await res.json();
 const newData= products.slice(0,8);
 setData(newData);    
