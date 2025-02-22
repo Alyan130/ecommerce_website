@@ -18,7 +18,7 @@ export default function AllProducts() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/products");
+        const res = await fetch("api/products",{cache:"force-cache"});
         const products = await res.json();
         setData(products);
       } catch (error) {
